@@ -26,14 +26,14 @@ int my_revlist_synthesis(list_t **begin)
 		next = tmp->next;
 		tmp->next = prev;
 		prev = tmp;
-		tmp = next; 
+		tmp = next;
 	}
 	*begin = prev;
 	return (0);
 }
 
-list_t *my_findnodeeqinlist_synthesis(list_t *begin, void *data_ref, 
-										int (*cmp)(void *, void *))
+list_t *my_findnodeeqinlist_synthesis(list_t * begin, void *data_ref,
+									int (*cmp) (void *, void *))
 {
 	list_t *tmp = begin;
 
