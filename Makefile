@@ -14,7 +14,11 @@ SRC	=	src/main.c		\
 		src/str_to_word_tab.c	\
 		src/free.c		\
 		src/print.c		\
-		src/ptr.c
+		src/command.c		\
+		src/sort.c		\
+		src/sort_choose.c	\
+		src/sort_name.c		\
+		src/sort_id.c
 
 OBJ	=	$(SRC:.c=.o)
 

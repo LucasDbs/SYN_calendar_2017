@@ -10,9 +10,8 @@
 #include <stdio.h>
 #include "calendar.h"
 
-int manage_employee(char *res, meeting_t **meeting, employee_t **employee)
+int manage_employee(char *res, employee_t **employee)
 {
-	(void)meeting;
 	char **tab = str_to_word_tab(res, ' ');
 
 	if (tab == NULL || tab_size(tab) != 6) {
@@ -29,9 +28,8 @@ int manage_employee(char *res, meeting_t **meeting, employee_t **employee)
 	return (0);
 }
 
-int manage_meeting(char *res, meeting_t **meeting, employee_t **employee)
+int manage_meeting(char *res, meeting_t **meeting)
 {
-	(void)employee;
 	char **tab = str_to_word_tab(res, ' ');
 
 	if (tab == NULL || tab_size(tab) <= 5) {
