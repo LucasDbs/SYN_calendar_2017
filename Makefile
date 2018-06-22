@@ -13,7 +13,8 @@ SRC	=	src/main.c		\
 		src/base_lknd_list.c	\
 		src/str_to_word_tab.c	\
 		src/free.c		\
-		src/print.c
+		src/print.c		\
+		src/ptr.c
 
 OBJ	=	$(SRC:.c=.o)
 

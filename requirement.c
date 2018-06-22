@@ -33,7 +33,7 @@ int my_revlist_synthesis(list_t **begin)
 }
 
 list_t *my_findnodeeqinlist_synthesis(list_t *begin, void *data_ref,
-									int (*cmp)(void *, void *))
+					int(*cmp)(void *, void *))
 {
 	list_t *tmp = begin;
 

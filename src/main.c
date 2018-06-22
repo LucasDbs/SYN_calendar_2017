@@ -23,7 +23,7 @@ int check_h(char **av)
 
 	while (av[i]) {
 		if (strcmp(av[i], "-h") == 0)
-			return(h_print());
+			return (h_print());
 		i++;
 	}
 	return (0);

@@ -30,12 +30,10 @@ int employee_print(employee_t *first)
 
 	while (tmp) {
 		printf("******************************\n");
-		printf("EMPLOYEE\n");
-		printf("first_name = %s\n", tmp->first_name);
-		printf("last_name = %s\n", tmp->last_name);
+		printf("%s ", tmp->first_name);
+		printf("%s\n", tmp->last_name);
 		printf("position = %s\n", tmp->position);
 		printf("city = %s\n", tmp->city);
-		printf("id = %s\n", tmp->city);
 		tmp = tmp->next;
 	}
 	return (0);

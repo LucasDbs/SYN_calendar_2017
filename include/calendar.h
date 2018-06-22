@@ -5,6 +5,9 @@
 ** Calendar
 */
 
+#ifndef CALENDAR_H_
+#define CALENDAR_H_
+
 typedef struct meeting_t
 {
 	char *id;
@@ -29,6 +32,8 @@ int tab_print(char **);
 char **str_to_word_tab(char *, char);
 employee_t *init_employee(char **);
 meeting_t *init_meeting(char **);
+int manage_employee(char *, meeting_t **, employee_t **);
+int manage_meeting(char *, meeting_t **, employee_t **);
 int add_employee(employee_t *, char **);
 int add_meeting(meeting_t *, char **);
 int employee_print(employee_t *);
@@ -38,3 +43,6 @@ char **tab_dup(char **);
 int meeting_free(meeting_t *);
 int employee_free(employee_t *);
 int free_tab(char **);
+int manage_struct(char *, meeting_t **, employee_t **);
+
+#endif
