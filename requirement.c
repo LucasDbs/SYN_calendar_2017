@@ -7,12 +7,7 @@
 
 #include <stdlib.h>
 #include <stdio.h>
-
-typedef struct list
-{
-	void *data;
-	struct list *next;
-} list_t;
+#include "requirement.h"
 
 int my_revlist_synthesis(list_t **begin)
 {
