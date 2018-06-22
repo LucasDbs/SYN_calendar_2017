@@ -6,7 +6,7 @@
 */
 
 #include <string.h>
-#include "ptr.h"
+#include "calendar.h"
 
 char **create_sort(void)
 {
@@ -27,40 +27,11 @@ int sort_employee(char *res, employee_t **employee)
 
 	if (tab == NULL || tab_size(tab) < 2)
 		return (-1);
-	else if (strncmp(tab[1], sort[0], strlen(sort[0])) == 0) {
+	else if (strncmp(tab[1], sort[0], strlen(sort[0])) == 0)
 		name_sort(tab, employee);
-	}
+	free_tab(tab);
 	return (0);
 }
 
 //	else if (strncmp(res, sort[1], strlen(sort[1])) == 0)
 //		manage_meeting(res, meeting);
-
-
-/*ptr_t *init_sort(void)
-{
-	ptr_t *new = malloc(sizeof(ptr_t) * 2);
-
-	new[0] = init_struct("sortByName", &name_sort);
-//	new[1] = init_struct("new_meeting", &manage_meeting);
-//	new[2] = init_struct("info_employees", &sort_employee);
-	return (new);
-}
-
-int manage_sort(char *s, char *res, meeting_t **meeting, employee_t **employee)
-{
-	ptr_t *check = init_sort();
-	int a = 0;
-
-	while (a != 1) {
-		if (strncmp(s, check[a].command,
-			strlen(check[a].command)) == 0) {
-			check[a].ptr(res, meeting, employee);
-			free(check);
-			return (0);
-		}
-		a++;
-	}
-	free(check);
-	return (0);
-}*/

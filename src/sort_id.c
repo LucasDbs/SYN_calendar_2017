@@ -11,19 +11,13 @@
 
 int swap_data(employee_t *a, employee_t *b)
 {
-	printf("a->last_name avant = %s\n", a->last_name);
-	printf("b->last_name avant = %s\n", b->last_name);
 	str_swap(&a->last_name, &b->last_name);
-	printf("a->last_name apres = %s\n", a->last_name);
-	printf("b->last_name apres = %s\n", b->last_name);
+	str_swap(&a->first_name, &b->first_name);
+	str_swap(&a->position, &b->position);
+	str_swap(&a->city, &b->city);
+	str_swap(&a->id, &b->id);
 	return (0);
 }
-
-//	str_swap(a->first_name, b->first_name);
-//	str_swap(a->position, b->position);
-//	str_swap(a->city, b->city);
-//	str_swap(a->id, b->id);
-
 
 int check_int(employee_t **first, employee_t *last, int *swap)
 {

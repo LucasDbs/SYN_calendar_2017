@@ -12,8 +12,7 @@ int name_sort(char **tab, employee_t **employee)
 	(void)tab;
 
 	bubstr_employee(*employee, 0);
+	bubstr_employee(*employee, 1);
+	bubid_employee(*employee);
 	return (0);
 }
-
-//	bubstr_employee(*employee, 1);
-//	bubid_employee(*employee);
