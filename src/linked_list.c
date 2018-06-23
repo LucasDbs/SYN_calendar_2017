@@ -61,8 +61,8 @@ int create_linked_list(void)
 			manage_struct(res, &meeting, &employee);
 	}
 	free(res);
-	employee_print(employee);
-	meeting_print(meeting);
+//	employee_print(employee);
+//	meeting_print(meeting);
 	meeting_free(meeting);
 	employee_free(employee);
 	return (0);

@@ -40,7 +40,7 @@ int check_job(employee_t **first, employee_t *last, int *swap)
 	return (0);
 }
 
-int bubjob_employee(employee_t *start)
+int bubjob_employee(employee_t *start, char **tab)
 {
 	employee_t *first = NULL;
 	employee_t *last = NULL;
@@ -54,5 +54,5 @@ int bubjob_employee(employee_t *start)
 		check_job(&first, last, &swap);
 		last = first;
 	} while (swap);
-	return (0);
+	return (employee_print(start, tab));
 }

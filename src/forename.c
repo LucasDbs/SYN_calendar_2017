@@ -38,7 +38,7 @@ int check_forename(employee_t **first, employee_t *last, int *swap)
 	return (0);
 }
 
-int bubforename_employee(employee_t *start)
+int bubforename_employee(employee_t *start, char **tab)
 {
 	employee_t *first = NULL;
 	employee_t *last = NULL;
@@ -52,5 +52,5 @@ int bubforename_employee(employee_t *start)
 		check_forename(&first, last, &swap);
 		last = first;
 	} while (swap);
-	return (0);
+	return (employee_print(start, tab));
 }

@@ -14,8 +14,6 @@ int compare_zip(employee_t *first)
 {
 	int res = 0;
 
-	if (atoi(first->city) > atoi(first->next->city))
-		return (1);
 	res = strcmp(dict(first, 0), dict((first)->next, 0));
 	if (!res)
 		res = strcmp(dict(first, 1), dict((first)->next, 1));
@@ -31,7 +29,9 @@ int compare_zip(employee_t *first)
 int check_zip(employee_t **first, employee_t *last, int *swap)
 {
 	while ((*first)->next != last) {
-		if (compare_zip(*first) > 0) {
+		if (atoi((*first)->city) > atoi((*first)->next->city))
+			swap_data(*first, (*first)->next);
+		else if (compare_zip(*first) > 0) {
 			swap_data(*first, (*first)->next);
 			*swap = 1;
 		}
@@ -40,7 +40,7 @@ int check_zip(employee_t **first, employee_t *last, int *swap)
 	return (0);
 }
 
-int bubzip_employee(employee_t *start)
+int bubzip_employee(employee_t *start, char **tab)
 {
 	employee_t *first = NULL;
 	employee_t *last = NULL;
@@ -54,5 +54,5 @@ int bubzip_employee(employee_t *start)
 		check_zip(&first, last, &swap);
 		last = first;
 	} while (swap);
-	return (0);
+	return (employee_print(start, tab));
 }
