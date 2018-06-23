@@ -55,14 +55,12 @@ int create_linked_list(void)
 	int end = 0;
 
 	while ((end = getline(&res, &size, stdin)) != -1
-	       && strcmp(res, "END\n") != 0) {
+		&& strcmp(res, "END\n") != 0) {
 		res[end - 1] = '\0';
 		if (res != NULL)
 			manage_struct(res, &meeting, &employee);
 	}
 	free(res);
-//	employee_print(employee);
-//	meeting_print(meeting);
 	meeting_free(meeting);
 	employee_free(employee);
 	return (0);

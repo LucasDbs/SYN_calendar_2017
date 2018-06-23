@@ -13,6 +13,8 @@ int check_struct(employee_t *tmp, char **tab)
 {
 	int i = 2;
 
+	if (tab[i] == NULL)
+		return (0);
 	while (tab[i]) {
 		if (strcmp(tmp->id, tab[i]) == 0)
 			return (0);
@@ -40,7 +42,6 @@ int meeting_print(meeting_t *first)
 int employee_print(employee_t *first, char **tab)
 {
 	employee_t *tmp = first;
-//	int i = 2;
 
 	while (tmp) {
 		if (check_struct(tmp, tab) == 0) {

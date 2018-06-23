@@ -11,11 +11,12 @@
 
 char **create_command(void)
 {
-	static char *command[2];
+	static char *command[3];
 
 	command[0] = "new_employee";
 	command[1] = "new_meeting";
 	command[2] = "info_employees";
+	command[3] = "fire";
 	return (command);
 }
 
@@ -31,3 +32,6 @@ int manage_struct(char *res, meeting_t **meeting, employee_t **employee)
 		sort_employee(res, employee);
 	return (0);
 }
+
+//	else if (strncmp(res, tab[3], strlen(tab[3])) == 0)
+//		fire_employee(res, employee);
