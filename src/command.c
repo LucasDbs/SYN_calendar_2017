@@ -30,8 +30,7 @@ int manage_struct(char *res, meeting_t **meeting, employee_t **employee)
 		manage_meeting(res, meeting);
 	else if (strncmp(res, tab[2], strlen(tab[2])) == 0)
 		sort_employee(res, employee);
+	else if (strncmp(res, tab[3], strlen(tab[3])) == 0)
+		fire_employee(res, employee);
 	return (0);
 }
-
-//	else if (strncmp(res, tab[3], strlen(tab[3])) == 0)
-//		fire_employee(res, employee);

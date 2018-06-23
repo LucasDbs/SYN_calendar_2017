@@ -20,7 +20,8 @@ SRC	=	src/main.c		\
 		src/sort_id.c		\
 		src/forename.c		\
 		src/job_sort.c		\
-		src/zip_sort.c
+		src/zip_sort.c		\
+		src/fire.c
 
 OBJ	=	$(SRC:.c=.o)
 

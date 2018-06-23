@@ -53,5 +53,6 @@ int bubzip_employee(employee_t *, char **);
 int bubid_employee(employee_t *, char **);
 int str_swap(char **, char **);
 char *dict(employee_t *, int);
+int fire_employee(char *, employee_t **);
 
 #endif
