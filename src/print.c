@@ -32,8 +32,8 @@ int employee_print(employee_t *first)
 		printf("******************************\n");
 		printf("%s ", tmp->first_name);
 		printf("%s\n", tmp->last_name);
-		printf("position = %s\n", tmp->position);
-		printf("city = %s\n", tmp->city);
+		printf("position: %s\n", tmp->position);
+		printf("city: %s\n", tmp->city);
 		tmp = tmp->next;
 	}
 	return (0);

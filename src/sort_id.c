@@ -19,15 +19,24 @@ int swap_data(employee_t *a, employee_t *b)
 	return (0);
 }
 
-int check_int(employee_t **first, employee_t *last, int *swap)
+int dict_int(employee_t *employee, int i)
 {
-	int a = 0;
-	int b = 0;
+	static int tab[2];
+
+	tab[0] = atoi(employee->id);
+	tab[1] = atoi(employee->city);
+	return (tab[i]);
+}
+
+int check_int(employee_t **first, employee_t *last, int *swap, int i)
+{
+//	int a = 0;
+//	int b = 0;
 
 	while ((*first)->next != last) {
-		a = atoi((*first)->id);
-		b = atoi((*first)->next->id);
-		if (a > b) {
+//		a = atoi((*first)->id);
+//		b = atoi((*first)->next->id);
+		if (dict_int(*first, i) > dict_int((*first)->next, i)) {
 			swap_data(*first, (*first)->next);
 			*swap = 1;
 		}
@@ -36,7 +45,7 @@ int check_int(employee_t **first, employee_t *last, int *swap)
 	return (0);
 }
 
-int bubid_employee(employee_t *start)
+int bubint_employee(employee_t *start, int i)
 {
 	employee_t *first = NULL;
 	employee_t *last = NULL;
@@ -47,7 +56,7 @@ int bubid_employee(employee_t *start)
 	do {
 		swap = 0;
 		first = start;
-		check_int(&first, last, &swap);
+		check_int(&first, last, &swap, i);
 		last = first;
 	} while (swap);
 	return (0);

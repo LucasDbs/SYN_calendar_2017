@@ -2,7 +2,7 @@
 ** EPITECH PROJECT, 2018
 ** Duboisse Lucas
 ** File description:
-** Sort functions
+** Zip sort
 */
 
 #include <stdio.h>
@@ -10,29 +10,12 @@
 #include <string.h>
 #include "calendar.h"
 
-int str_swap(char **a, char **b)
-{
-	char *swap = *a;
-
-	*a = *b;
-	*b = swap;
-	return (0);
-}
-
-char *dict(employee_t *employee, int i)
-{
-	static char *tab[3];
-
-	tab[0] = employee->last_name;
-	tab[1] = employee->first_name;
-	tab[2] = employee->position;
-	return (tab[i]);
-}
-
-int compare_name(employee_t *first)
+int compare_zip(employee_t *first)
 {
 	int res = 0;
 
+	if (atoi(first->city) > atoi(first->next->city))
+		return (1);
 	res = strcmp(dict(first, 0), dict((first)->next, 0));
 	if (!res)
 		res = strcmp(dict(first, 1), dict((first)->next, 1));
@@ -45,10 +28,10 @@ int compare_name(employee_t *first)
 	return (res);
 }
 
-int check_name(employee_t **first, employee_t *last, int *swap)
+int check_zip(employee_t **first, employee_t *last, int *swap)
 {
 	while ((*first)->next != last) {
-		if (compare_name(*first) > 0) {
+		if (compare_zip(*first) > 0) {
 			swap_data(*first, (*first)->next);
 			*swap = 1;
 		}
@@ -57,7 +40,7 @@ int check_name(employee_t **first, employee_t *last, int *swap)
 	return (0);
 }
 
-int bubname_employee(employee_t *start)
+int bubzip_employee(employee_t *start)
 {
 	employee_t *first = NULL;
 	employee_t *last = NULL;
@@ -68,7 +51,7 @@ int bubname_employee(employee_t *start)
 	do {
 		swap = 0;
 		first = start;
-		check_name(&first, last, &swap);
+		check_zip(&first, last, &swap);
 		last = first;
 	} while (swap);
 	return (0);

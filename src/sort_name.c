@@ -11,8 +11,30 @@ int name_sort(char **tab, employee_t **employee)
 {
 	(void)tab;
 
-	bubstr_employee(*employee, 0);
-	bubstr_employee(*employee, 1);
-	bubid_employee(*employee);
+	bubname_employee(*employee);
+	return (0);
+}
+
+int forename_sort(char **tab, employee_t **employee)
+{
+	(void)tab;
+
+	bubforename_employee(*employee);
+	return (0);
+}
+
+int job_sort(char **tab, employee_t **employee)
+{
+	(void)tab;
+
+	bubjob_employee(*employee);//, 2);
+	return (0);
+}
+
+int zip_sort(char **tab, employee_t **employee)
+{
+	(void)tab;
+
+	bubint_employee(*employee, 1);
 	return (0);
 }

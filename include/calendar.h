@@ -47,8 +47,14 @@ int manage_struct(char *, meeting_t **, employee_t **);
 int sort_employee(char *, employee_t **);
 int swap_data(employee_t *, employee_t *);
 int name_sort(char **, employee_t **);
-int bubstr_employee(employee_t *, int);
-int bubid_employee(employee_t *);
+int forename_sort(char **, employee_t **);
+int job_sort(char **, employee_t **);
+int zip_sort(char **, employee_t **);
+int bubname_employee(employee_t *);
+int bubforename_employee(employee_t *);
+int bubjob_employee(employee_t *start);
+int bubint_employee(employee_t *, int);
 int str_swap(char **, char **);
+char *dict(employee_t *, int);
 
 #endif
