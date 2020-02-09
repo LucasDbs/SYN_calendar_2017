@@ -1,0 +1,6 @@
+new_employee Bear Tenderheart PDG 27000 1
+new_employee Penguin Cozyheart DRH 12000 2
+new_employee Bear LoveALot Comptable 27000 3
+fire 1 3
+info_employees sortByName
+END
